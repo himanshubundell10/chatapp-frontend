@@ -8,6 +8,7 @@ import userPic from "../assets/userPic.png";
 import { server } from "../constents/config";
 import { userExists } from "../redux/reducer/auth";
 import { usernameValidator } from "../utils/validator";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [usernameFocused, setUsernameFocused] = useState(false); //login username focused
@@ -15,6 +16,7 @@ const Login = () => {
   const [regNameFocused, setRegNameFocused] = useState(false); //register name focused
   const [regBioFocused, setRegBioFocused] = useState(false); //register bio focused
   const [isLogin, setIsLogin] = useState(true); //for toggling
+  const nevigate = useNavigate()
 
   const username = useInputValidation("", usernameValidator);
   const password = useInputValidation("");
@@ -56,6 +58,7 @@ const Login = () => {
       });
       dispatch(userExists(data.user));
       toast.success(data.message, { id: toastId });
+      nevigate("/")
     } catch (error) {
       toast.error(error?.response?.data?.message || "Something Went Wrong", {
         id: toastId,
@@ -81,9 +84,9 @@ const Login = () => {
           },
         }
       );
-      console.log(data.user);
       dispatch(userExists(data.user));
       toast.success(data.message, { id: toastId });
+      nevigate("/")
     } catch (error) {
       toast.error(error?.response?.data?.message || "Something Went Wrong", {
         id: toastId,

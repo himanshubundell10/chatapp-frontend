@@ -78,7 +78,7 @@ const Navbar = () => {
     <>
       <nav
         style={{ backgroundColor: backgroundColor }}
-        className={`w-full flex items-center justify-between h-10 backdrop-blur-2xl faded-border-box `}
+        className={`w-full flex items-center justify-between h-12 backdrop-blur-2xl faded-border-box `}
       >
         {/* for menu and app name */}
         <div className="logo flex gap-4 justify-center items-center">

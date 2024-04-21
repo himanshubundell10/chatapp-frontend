@@ -175,7 +175,7 @@ const Chat = ({ chatId, user }) => {
     <>
       {/* chat container */}
       <div
-        className="flex flex-col p-1 gap-1 h-[92%] overflow-x-hidden overflow-y-auto  scrollable"
+        className="flex flex-col p-1 gap-1 h-[86%] overflow-x-hidden overflow-y-auto  scrollable"
         style={{ maxHeight: "calc(100% - 3rem)" }}
       >
         <div ref={containerRef} className="scrollable">
@@ -194,7 +194,7 @@ const Chat = ({ chatId, user }) => {
 
       <form
         onSubmit={submitHandler}
-        className={`absolute bottom-2 w-full p-1 h-[8%]`}
+        className={`absolute w-full p-1 h-[14%] flex flex-col justify-center`}
         style={{ position: "relative" }}
       >
         <div className="flex justify-center items-center gap-1">

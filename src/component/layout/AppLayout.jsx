@@ -40,14 +40,14 @@ const AppLayout = () => (WrappedComponent) => {
           ? "100%"
           : "25% 75%"
         : "25% 50% 25%",
-      height: "calc(100vh - 2.5rem)",
+      height: "calc(100vh - 3rem)",
     };
 
-    useEffect(() => {
-      window.onresize = () => {
-        window.location.reload();
-      };
-    }, [isMediumScreen, isSmallScreen]);
+    // useEffect(() => {
+    //   window.onresize = () => {
+    //     window.location.reload();
+    //   };
+    // }, [isMediumScreen, isSmallScreen]);
 
     const backgroundColor = hexToRgba70("#0000FF");
 
