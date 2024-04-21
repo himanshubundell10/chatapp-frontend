@@ -16,7 +16,6 @@ const Login = () => {
   const [regNameFocused, setRegNameFocused] = useState(false); //register name focused
   const [regBioFocused, setRegBioFocused] = useState(false); //register bio focused
   const [isLogin, setIsLogin] = useState(true); //for toggling
-  const navigate = useNavigate();
 
   const username = useInputValidation("", usernameValidator);
   const password = useInputValidation("");
@@ -58,7 +57,7 @@ const Login = () => {
       });
       dispatch(userExists(data.user));
       toast.success(data.message, { id: toastId });
-      navigate("/");
+      window.location.reload();
     } catch (error) {
       toast.error(error?.response?.data?.message || "Something Went Wrong", {
         id: toastId,
@@ -86,7 +85,6 @@ const Login = () => {
       );
       dispatch(userExists(data.user));
       toast.success(data.message, { id: toastId });
-      navigate("/");
     } catch (error) {
       toast.error(error?.response?.data?.message || "Something Went Wrong", {
         id: toastId,
