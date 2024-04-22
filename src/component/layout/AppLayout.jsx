@@ -109,6 +109,15 @@ const AppLayout = () => (WrappedComponent) => {
 
     useSocketEvents(socket, eventHandlers);
 
+    // theme render
+    const { theme } = useSelector((state) => state.misc);
+
+    useEffect(() => {
+      localStorage.setItem("theme", theme);
+      const localTheme = localStorage.getItem("theme");
+      document.querySelector("html").setAttribute("data-theme", localTheme);
+    }, [theme]);
+
     return (
       <>
         {/* Navbar */}
