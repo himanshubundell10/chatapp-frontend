@@ -8,7 +8,6 @@ import userPic from "../assets/userPic.png";
 import { server } from "../constents/config";
 import { userExists } from "../redux/reducer/auth";
 import { usernameValidator } from "../utils/validator";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [usernameFocused, setUsernameFocused] = useState(false); //login username focused
@@ -51,13 +50,12 @@ const Login = () => {
     formData.append("avatar", file);
 
     try {
-      const data = await axios.post(`${server}/api/v1/user/new`, formData, {
+      const { data } = await axios.post(`${server}/api/v1/user/new`, formData, {
         withCredentials: true,
         headers: { "Content-Type": "multipart/form-data" },
       });
       dispatch(userExists(data.user));
       toast.success(data.message, { id: toastId });
-      window.location.reload();
     } catch (error) {
       toast.error(error?.response?.data?.message || "Something Went Wrong", {
         id: toastId,
