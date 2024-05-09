@@ -4,7 +4,11 @@ import { toast } from "react-hot-toast";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { FaSearch } from "react-icons/fa";
 import { FaUserGroup } from "react-icons/fa6";
-import { IoIosAddCircle, IoIosNotifications, IoMdColorPalette } from "react-icons/io";
+import {
+  IoIosAddCircle,
+  IoIosNotifications,
+  IoMdColorPalette,
+} from "react-icons/io";
 import { IoLogOut } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -77,30 +81,31 @@ const Navbar = () => {
   return (
     <>
       <nav
-        style={{ backgroundColor: backgroundColor }}
-        className={`w-full flex items-center justify-between h-12 backdrop-blur-2xl faded-border-box `}
+        // style={{ backgroundColor: backgroundColor }}
+        className={`w-full flex items-center justify-between  h-12 backdrop-blur-2xl faded-border-box bg-[#F4F4F5] `}
       >
         {/* for menu and app name */}
         <div className="logo flex gap-4 justify-center items-center">
           <button
+            //  style={{ color: '#F4F4F5' }}
             onClick={handleMobile}
             className="sm:hidden pl-2 text-xl font-extrabold"
           >
             <BiMenuAltLeft />
           </button>
-          <span className="font-pacifico text-xl font-extrabold sm:pl-6 ">
+          <span className="font-pacifico text-xl font-extrabold sm:pl-6 text-[#71717a] ">
             ChatEase
           </span>
         </div>
 
         {/* all icons for features */}
-        <div className="features flex  items-center gap-4">
+        <div className="features flex  items-center gap-4   ">
           <button
             title="Search"
             onClick={openSearch}
-            className="text-xl font-extrabold"
+            className="text-xl font-extrabold "
           >
-            <FaSearch />
+           <FaSearch/>
           </button>
           <button
             title="Create Group"

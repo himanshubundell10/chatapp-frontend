@@ -20,12 +20,12 @@ const MessageComponent = ({ message, user }) => {
       <div
         className={
           sameSender
-            ? "chat-header flex gap-2 items-center"
-            : "chat-header flex gap-2 items-center"
+            ? "chat-header flex gap-2 items-center text-black font-medium"
+            : "chat-header flex gap-2 items-center text-black font-medium"
         }
       >
         {sender?.name}
-        <time className="text-xs opacity-50">{timeAgo}</time>
+        <time className="text-xs opacity-60 text-black">{timeAgo}</time>
       </div>
       {content && <span className="chat-bubble">{content}</span>}
 

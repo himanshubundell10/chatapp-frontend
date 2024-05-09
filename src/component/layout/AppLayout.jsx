@@ -144,7 +144,7 @@ const AppLayout = () => (WrappedComponent) => {
           >
             <div
               // style={{ backgroundColor: backgroundColor }}
-              className="w-full h-screen bg-black scrollable"
+              className="w-full h-screen bg-white scrollable border-r-2"
             >
               <ChatList
                 w="70vw"
@@ -162,8 +162,7 @@ const AppLayout = () => (WrappedComponent) => {
           {/* Chatlist component */}
 
           <div
-            style={{ backgroundColor: backgroundColor }}
-            className="hidden sm:block backdrop-blur-2xl border-none scrollable h-full"
+            className="hidden sm:block scrollable h-full border border-solid border-r-1 border-l-0 "
           >
             {isLoading ? (
               <div className="w-full flex flex-col  gap-4 justify-start mt-10 items-start">
@@ -184,7 +183,7 @@ const AppLayout = () => (WrappedComponent) => {
             )}
           </div>
           {/* Main component */}
-          <div className={`border-none backdrop-blur-2xl`}>
+          <div className={`backdrop-blur-2xl border border-solid border-r-1 border-l-0 `}>
             <WrappedComponent {...props} chatId={chatId} user={user} />
           </div>
           {/* Profile component */}

@@ -19,16 +19,16 @@ const Chatitem = ({
   return (
     <Link
       onContextMenu={(e) => handleDeleteChat(e, _id, groupChat)}
-      className="no-underline text-black hover:bg-slate-500"
+      className="no-underline text-black hover:bg-[#EEEEEF] rounded-md m-1"
       to={`/chat/${_id}`}
     >
       <motion.div
         initial={{ opacit: 0, y: "-100%" }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: index * 0.1 }}
-        className="items-center flex pl-4 pt-2 pb-2 gap-2 pr-2"
+        className="items-center flex pl-4 pt-2 pb-2 gap-2 pr-2 "
         style={{
-          backgroundColor: sameSender ? "black" : "unset",
+          backgroundColor: sameSender ? "#EEEEEF" : "unset",
           color: sameSender ? "white" : "unset",
           position: "relative",
         }}
@@ -37,7 +37,7 @@ const Chatitem = ({
         <AvatarCard avatar={avatar} />
 
         <div className="flex flex-col">
-          <span className="truncate">{name}</span>
+          <span className="truncate text-black font-semibold">{name}</span>
           {newMessageAlert && (
             <span className={`${isMobile ? `text-white` : ""}`}>
               {newMessageAlert.count} New Message

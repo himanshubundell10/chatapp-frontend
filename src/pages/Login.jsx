@@ -157,7 +157,7 @@ const Login = () => {
               </div>
 
               {/* button for login */}
-              <div className="w-full flex flex-col justify-center items-center gap-2 absolute bottom-24 left-0 ">
+              <div className="w-full flex flex-col justify-center items-center gap-2  ">
                 <div className="w-full flex justify-center items-center gap-2 mt-10">
                   <button
                     disabled={isLoading}
