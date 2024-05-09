@@ -94,21 +94,17 @@ const Login = () => {
   };
 
   return (
-    <div
-      className={
-        "w-full h-screen flex justify-center  bg-[url(../backg.jpg)] bg-no-repeat bg-center bg-cover"
-      }
-    >
-      <div className="h-full w-full bg-black-900 bg-opacity-10 backdrop-filter backdrop-blur-2xl flex justify-center items-center">
-        {isLogin ? (
-          // login page
-          <div className="login w-[60%] h-full ">
-            <h1 className="text-center text-4xl font-bold pb-1 text-white tracking-wide pt-10">
-              Login
+    <div className="h-screen w-[100vw] bg-[url(../bg-image.jpg)] flex justify-center items-center">
+      {isLogin ? (
+        // login page
+        <div className="login w-[400px] sm:w-[60%] md:w-[60%] lg:w-[600px] flex items-center justify-center h-full p-10 ">
+          <div className="bg-[#18181B] shadow-xl rounded-2xl w-full h-full flex flex-col justify-center items-start p-5">
+            <h1 className="text-left text-3xl font-bold text-white tracking-wide h-12">
+              Log in
             </h1>
 
             <form
-              className="flex flex-col gap-12 md:gap-10 w-3/4 md:w-1/2 mt-6 m-auto p-1"
+              className="flex flex-col gap-12 md:gap-10 w-[100%] h-full mt-6 m-auto relative"
               onSubmit={handleLogin}
             >
               {/* username input  */}
@@ -119,7 +115,7 @@ const Login = () => {
                   onChange={username.changeHandler}
                   type="text"
                   required={true}
-                  className="bg-transparent outline-none border-b-[1px] text-white font-bold text-xl border-white pt-7  placeholder-white focus:border-blue-500 w-full cursor-pointer"
+                  className="bg-transparent outline-none border-b-[1px] text-[#9e9e9e] font-bold text-xl border-[#9e9e9e] pt-7  placeholder-white focus:border-[#006FEE] w-full cursor-pointer"
                   onFocus={() => setUsernameFocused(true)}
                   onBlur={(e) => {
                     if (!e.target.value) {
@@ -129,7 +125,7 @@ const Login = () => {
                 />
                 <label
                   htmlFor="username"
-                  className={`absolute cursor-pointer w-1/2 left-4 transition-all duration-200 origin-top-left  text-white text-base 
+                  className={`absolute cursor-pointer w-1/2 left-1 transition-all duration-200 origin-top-left  text-[#9e9e9e] text-base 
              ${usernameFocused ? "top-0" : "top-8"} `}
                 >
                   Username
@@ -149,11 +145,11 @@ const Login = () => {
                       setPasswordFocused(false);
                     }
                   }}
-                  className="bg-transparent outline-none border-b-[1px] text-white font-bold text-xl border-white pt-7  placeholder-white focus:border-blue-500 w-full cursor-pointer  "
+                  className="bg-transparent outline-none border-b-[1px] text-[#9e9e9e]  font-bold text-xl border-[#9e9e9e] pt-7  placeholder-white focus:border-[#006FEE] w-full cursor-pointer  "
                 />
                 <label
                   htmlFor="password"
-                  className={`absolute cursor-pointer w-1/2 left-4 transition-all duration-200 origin-top-left text-white text-base 
+                  className={`absolute cursor-pointer w-1/2 left-1 transition-all duration-200 origin-top-left text-[#9e9e9e]  text-base 
              ${passwordFocused ? "top-0" : "top-8"}`}
                 >
                   Password
@@ -161,32 +157,45 @@ const Login = () => {
               </div>
 
               {/* button for login */}
-              <div className="flex flex-col justify-center items-center gap-2 mt-10">
-                <button
-                  disabled={isLoading}
-                  className="btn btn-active btn-primary btn-xl md:btn-md lg:btn-lg"
-                >
-                  Login
-                </button>
-                <span className="font-extrabold text-black text-2xl">OR </span>
-                <button
-                  disabled={isLoading}
-                  className="font-bold text-center text-xl md:text-2xl text-white z-10 cursor-pointer"
-                  onClick={() => setIsLogin((prev) => !prev)}
-                >
-                  Sign Up Instead ?
-                </button>
+              <div className="w-full flex flex-col justify-center items-center gap-2 absolute bottom-24 left-0 ">
+                <div className="w-full flex justify-center items-center gap-2 mt-10">
+                  <button
+                    disabled={isLoading}
+                    className=" bg-[#006FEE] rounded-xl  hover:bg-[#006feed6] hover:text-black transition-all duration-500 ease-in-out text-white py-2 w-full font-semibold"
+                  >
+                    Login
+                  </button>
+                </div>
+                <div className="select-none w-full flex justify-center items-center gap-4">
+                  <span className="bg-[#9e9e9e] w-[45%] h-[1px]"></span>
+                  <span className="text-[#9e9e9e] w-fit">or</span>
+                  <span className="bg-[#9e9e9e] w-[45%] h-[1px]"></span>
+                </div>
+                <div className="flex  flex-wrap items-center justify-center ">
+                  <span className="select-none text-center ">
+                    Need to create an account? &nbsp;
+                  </span>
+                  <button
+                    disabled={isLoading}
+                    className="text-[#006FEE]  hover:text-[#006feed6] transition-all duration-500 ease-in-out font-semibold"
+                    onClick={() => setIsLogin((prev) => !prev)}
+                  >
+                    Sign Up
+                  </button>
+                </div>
               </div>
             </form>
           </div>
-        ) : (
-          // signup page start here
-          <div className="signup w-[60%] h-full ">
-            <h1 className="text-center text-4xl font-bold pb-1 pt-5 text-white tracking-tight">
+        </div>
+      ) : (
+        // signup page start here
+        <div className="signup w-[400px] sm:w-[60%] md:w-[60%] lg:w-[600px] flex items-center justify-center h-full p-10 ">
+          <div className="bg-[#18181B] shadow-xl rounded-2xl w-full h-full flex flex-col justify-center items-start p-5">
+            <h1 className="text-left text-3xl font-bold h-12 text-white tracking-wide">
               Sign Up
             </h1>
             <form
-              className="flex flex-col gap-1 md:gap-2 w-3/4 md:w-1/2 h-full mt-4 md:mt-6 m-auto p-1"
+              className="flex flex-col gap-1 md:gap-2 w-full h-full mt-4 md:mt-3 m-auto"
               onSubmit={handleSignUp}
             >
               {/* avatar input */}
@@ -220,7 +229,7 @@ const Login = () => {
                   onChange={name.changeHandler}
                   type="text"
                   required={true}
-                  className="bg-transparent outline-none border-b-[1px] text-white font-bold text-xl border-white pt-7  placeholder-white focus:border-blue-500 w-full cursor-pointer"
+                  className="bg-transparent outline-none border-b-[1px]  m-1  text-[#9e9e9e] font-bold text-xl border-[#9e9e9e] pt-7  placeholder-white focus:border-blue-500 w-full cursor-pointer"
                   onFocus={() => setRegNameFocused(true)}
                   onBlur={(e) => {
                     if (!e.target.value) {
@@ -230,7 +239,7 @@ const Login = () => {
                 />
                 <label
                   htmlFor="name"
-                  className={`absolute cursor-pointer w-1/2 left-4 transition-all duration-200 origin-top-left  text-white text-base 
+                  className={`absolute cursor-pointer w-1/2 left-1 transition-all duration-200 origin-top-left  text-[#9e9e9e] text-base 
              ${regNameFocused ? "top-0" : "top-8"} `}
                 >
                   Name
@@ -244,7 +253,7 @@ const Login = () => {
                   onChange={bio.changeHandler}
                   type="text"
                   required={true}
-                  className="bg-transparent outline-none border-b-[1px] text-white font-bold text-xl border-white pt-7  placeholder-white focus:border-blue-500 w-full cursor-pointer"
+                  className="bg-transparent outline-none border-b-[1px] pt-7  placeholder-white focus:border-blue-500 w-full cursor-pointer  m-1  text-[#9e9e9e] font-bold text-xl border-[#9e9e9e]"
                   onFocus={() => setRegBioFocused(true)}
                   onBlur={(e) => {
                     if (!e.target.value) {
@@ -254,7 +263,7 @@ const Login = () => {
                 />
                 <label
                   htmlFor="bio"
-                  className={`absolute cursor-pointer w-1/2 left-4 transition-all duration-200 origin-top-left  text-white text-base 
+                  className={`absolute cursor-pointer w-1/2 left-1 transition-all duration-200 origin-top-left  text-[#9e9e9e]  text-base 
              ${regBioFocused ? "top-0" : "top-8"} `}
                 >
                   Bio
@@ -269,7 +278,7 @@ const Login = () => {
                   onChange={username.changeHandler}
                   type="text"
                   required={true}
-                  className="bg-transparent outline-none border-b-[1px] text-white font-bold text-xl border-white pt-7  placeholder-white focus:border-blue-500 w-full cursor-pointer"
+                  className="bg-transparent outline-none border-b-[1px] pt-7  placeholder-white focus:border-blue-500 w-full cursor-pointer m-1  text-[#9e9e9e] font-bold text-xl border-[#9e9e9e]"
                   onFocus={() => setUsernameFocused(true)}
                   onBlur={(e) => {
                     if (!e.target.value) {
@@ -279,7 +288,7 @@ const Login = () => {
                 />
                 <label
                   htmlFor="username"
-                  className={`absolute cursor-pointer w-1/2 left-4 transition-all duration-200 origin-top-left  text-white text-base 
+                  className={`absolute cursor-pointer w-1/2 left-1 transition-all duration-200 origin-top-left  text-[#9e9e9e]  text-base 
              ${usernameFocused ? "top-0" : "top-8"} `}
                 >
                   Username
@@ -290,7 +299,7 @@ const Login = () => {
                   </span>
                 )}
               </div>
-              {/* username input  */}
+              {/* password input  */}
               <div className="relative w-full ">
                 <input
                   id="password"
@@ -298,7 +307,7 @@ const Login = () => {
                   onChange={password.changeHandler}
                   type="password"
                   required={true}
-                  className="bg-transparent outline-none border-b-[1px] text-white font-bold text-xl border-white pt-7  placeholder-white focus:border-blue-500 w-full cursor-pointer"
+                  className="bg-transparent outline-none border-b-[1px] pt-7  placeholder-white focus:border-blue-500 w-full cursor-pointer m-1 text-[#9e9e9e] font-bold text-xl border-[#9e9e9e]"
                   onFocus={() => setPasswordFocused(true)}
                   onBlur={(e) => {
                     if (!e.target.value) {
@@ -308,36 +317,49 @@ const Login = () => {
                 />
                 <label
                   htmlFor="password"
-                  className={`absolute cursor-pointer w-1/2 left-4 transition-all duration-200 origin-top-left  text-white text-base 
+                  className={`absolute cursor-pointer w-1/2 left-1 transition-all duration-200 origin-top-left  text-[#9e9e9e]  text-base 
              ${passwordFocused ? "top-0" : "top-8"} `}
                 >
                   Password
                 </label>
               </div>
               {/* button for signup */}
-              <div className="flex flex-col justify-center items-center gap-2 mt-4 md:mt-3">
-                <button
-                  disabled={isLoading}
-                  className="btn btn-active btn-primary btn-xl md:btn-md lg:btn-lg  "
-                >
-                  Sign Up
-                </button>
-                <span className="font-extrabold text-black text-2xl">OR </span>
-                <button
-                  disabled={isLoading}
-                  className="font-bold text-center md:text-2xl text-xl text-white z-10 cursor-pointer"
-                  onClick={() => setIsLogin((prev) => !prev)}
-                >
-                  Log In Instead
-                </button>
+              <div className="w-full flex flex-col justify-center items-center gap-2 ">
+                <div className="w-full flex justify-center items-center gap-2 mt-10">
+                  <button
+                    disabled={isLoading}
+                    className=" bg-[#006FEE] rounded-xl  hover:bg-[#006feed6] hover:text-black transition-all duration-500 ease-in-out text-white py-2 w-full font-semibold "
+                  >
+                    Sign Up
+                  </button>
+                </div>
+                <div className="select-none w-full flex justify-center items-center gap-4">
+                  <span className="bg-[#9e9e9e] w-[45%] h-[1px]"></span>
+                  <span className="text-[#9e9e9e] w-fit">or</span>
+                  <span className="bg-[#9e9e9e] w-[45%] h-[1px]"></span>
+                </div>
+                <div className="flex  flex-wrap items-center justify-center">
+                  <span className="select-none text-center ">
+                    Already have an account? &nbsp;
+                  </span>
+                  <button
+                    disabled={isLoading}
+                    className="text-[#006FEE]  hover:text-[#006feed6] transition-all duration-500 ease-in-out font-semibold"
+                    onClick={() => setIsLogin((prev) => !prev)}
+                  >
+                    Log In
+                  </button>
+                </div>
               </div>
             </form>
           </div>
-        )}
-        {/* chat app name */}
-        <div className="logo w-[40%]  h-[100%] z-10 text-4xl sm:text-5xl md:text-7xl font-extrabold text-white flex justify-center items-center">
-          <p className="font-pacifico w-full text-center">ChatEase</p>
         </div>
+      )}
+      {/* chat app name */}
+      <div className="logo w-[30%] sm:w-[60%] md:w-[60%] h-full z-10 text-4xl sm:text-5xl md:text-7xl font-extrabold text-white hidden sm:block justify-center items-center">
+        <p className="flex justify-center items-center h-full font-pacifico w-full text-center  ">
+          ChatEase
+        </p>
       </div>
     </div>
   );
