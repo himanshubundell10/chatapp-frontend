@@ -197,14 +197,14 @@ const Chat = ({ chatId, user }) => {
         className={`absolute w-full p-1 h-[14%] flex flex-col justify-center`}
         style={{ position: "relative" }}
       >
-        <div className="flex justify-center items-center gap-1">
-          <button onClick={handleFileOpen} className={`text-xl`}>
+        <div className="flex justify-center items-center gap-1 border border-[2px] rounded-xl p-2">
+          <button onClick={handleFileOpen} className={`text-xl filter invert`}>
             <RiAttachment2 />
           </button>
 
           <input
             type="text"
-            className="w-[90%] h-[100%] border-none outline-none text-black p-[0.3rem] pl-3 rounded-3xl bg-slate-100  "
+            className="w-[90%] h-[100%]  outline-none text-black p-[0.3rem] pl-3 bg-transparent  "
             placeholder="Type a message..."
             value={message}
             onChange={messageOnChange}
@@ -212,9 +212,9 @@ const Chat = ({ chatId, user }) => {
           />
           <button
             type="submit"
-            className="text-2xl p-1 w-7 h-6 flex items-center justify-center hover:rotate-12 transition-all bg-primary rounded-full"
+            className="text-2xl bg-black p-1  w-8 h-8 flex items-center justify-center hover:rotate-12 transition-all rounded-full"
           >
-            <BsFillSendFill className="text-xl" />
+            <BsFillSendFill className="w-5" />
           </button>
         </div>
       </form>

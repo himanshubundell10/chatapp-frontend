@@ -39,7 +39,7 @@ const Theme = () => {
               onClick={() => dispatch(setTheme("light"))}
               className="md:w-8 md:h-8 w-4 h-4 shadow-md hover:bg-slate-100 bg-white rounded-full"
             ></button>
-            <button
+            {/* <button
               onClick={() => dispatch(setTheme("dark"))}
               className="md:w-8 md:h-8  w-4 h-4 bg-black rounded-full"
             ></button>
@@ -82,7 +82,7 @@ const Theme = () => {
             <button
               onClick={() => dispatch(setTheme("luxury"))}
               className="md:w-8 md:h-8 w-4 h-4 bg-[#DCA54C] rounded-full"
-            ></button>
+            ></button> */}
           </motion.div>
           <div className="modal-action">
             {/* if there is a button in form, it will close the modal */}

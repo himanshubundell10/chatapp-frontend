@@ -4,7 +4,7 @@ import AppLayout from "../component/layout/AppLayout";
 const Home = () => {
   return (
     <>
-      <div className="text-white font-bold text-center p-4 text-2xl tracking-wider  ">
+      <div className="text-black font-bold text-center p-4 text-2xl tracking-wider  ">
         Select A Friend To Chat
       </div>
     </>

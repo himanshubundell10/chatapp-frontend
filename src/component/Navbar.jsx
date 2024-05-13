@@ -89,11 +89,11 @@ const Navbar = () => {
           <button
             //  style={{ color: '#F4F4F5' }}
             onClick={handleMobile}
-            className="sm:hidden pl-2 text-xl font-extrabold"
+            className="sm:hidden pl-2 text-xl font-extrabold filter invert"
           >
             <BiMenuAltLeft />
           </button>
-          <span className="font-pacifico text-xl font-extrabold sm:pl-6 text-[#71717a] ">
+          <span className="font-pacifico text-2xl font-extrabold sm:pl-6 text-black ">
             ChatEase
           </span>
         </div>
@@ -103,21 +103,21 @@ const Navbar = () => {
           <button
             title="Search"
             onClick={openSearch}
-            className="text-xl font-extrabold "
+            className="text-xl font-extrabold filter invert "
           >
            <FaSearch/>
           </button>
           <button
             title="Create Group"
             onClick={openNewGroup}
-            className="text-xl font-extrabold"
+            className="text-xl font-extrabold filter invert"
           >
             <IoIosAddCircle />
           </button>
           <button
             title="My Groups"
             onClick={navigateToGroup}
-            className="text-xl font-extrabold"
+            className="text-xl font-extrabold filter invert"
           >
             <FaUserGroup />
           </button>
@@ -127,7 +127,7 @@ const Navbar = () => {
           {notificationCount ? (
             <button
               title="Notifications"
-              className="relative text-xl font-extrabold"
+              className="relative text-xl font-extrabold filter invert"
               onClick={openNotification}
             >
               <IoIosNotifications />
@@ -137,18 +137,18 @@ const Navbar = () => {
             <button
               title="Notifications"
               onClick={openNotification}
-              className={`text-xl font-extrabold`}
+              className={`text-xl font-extrabold filter invert`}
             >
               <IoIosNotifications />
             </button>
           )}
-          <button onClick={openTheme} className="text-xl font-extrabold">
+          <button onClick={openTheme} className="text-xl font-extrabold filter invert">
             <IoMdColorPalette />
           </button>
           <button
             title="Logout"
             onClick={logoutHandler}
-            className="text-xl font-extrabold pr-4"
+            className="text-xl font-extrabold pr-4 filter invert"
           >
             <IoLogOut />
           </button>

@@ -27,8 +27,8 @@
 }
 
 .scrollable::-webkit-scrollbar-thumb {
-  background-color: #4a4a4a; /* Set the color of the scrollbar thumb */
-  border-radius: 10px; /* Set the border radius of the scrollbar thumb */
+  background-color: #f4f4f5; /* Set the color of the scrollbar thumb */
+  border-radius: 4px; /* Set the border radius of the scrollbar thumb */
 }
 
 .scrollable::-webkit-scrollbar-track {
@@ -36,7 +36,7 @@
 }
 
 body {
-  /* background: url("../backg.jpg");
+  /* background: url("../bg-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

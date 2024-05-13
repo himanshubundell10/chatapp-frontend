@@ -52,15 +52,15 @@ const FileMenu = ({ anchorEl, chatId }) => {
 
   return (
     <>
-      <Menu anchorEl={anchorEl} open={isFileMenu} onClose={closeFileMenu}>
+      <Menu anchorEl={anchorEl} open={isFileMenu} onClose={closeFileMenu}  >
         <div style={{ width: "10rem", color: "black" }}>
           {/* images */}
-          <MenuList>
-            <MenuItem onClick={selectImage}>
+          <MenuList >
+            <MenuItem onClick={selectImage} className="p-2">
               <FaImage className="filter invert" />
               <ListItemText className="ml-2 filter invert">Image</ListItemText>
               <input
-                className="hidden"
+                className="hidden p-2"
                 type="file"
                 multiple
                 accept="image/png,image/jpeg,image/gif"

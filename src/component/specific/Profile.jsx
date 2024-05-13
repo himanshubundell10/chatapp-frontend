@@ -1,39 +1,29 @@
-import React from "react";
-import { FaUserAlt } from "react-icons/fa";
-import { BiSolidFace } from "react-icons/bi";
-import { CgCalendarDates } from "react-icons/cg";
 import moment from "moment";
+import React from "react";
+import { CgCalendarDates } from "react-icons/cg";
+import { FaUserAlt } from "react-icons/fa";
 
 const Profile = ({ user }) => {
   return (
-    <div className="flex flex-col gap-2 items-center">
-      <div className="avatar w-52 h-52 object-contain mb-1 border-1 border-slate-600 rounded-full mt-2 ">
-        <img src={user?.avatar?.url} alt={"userimage"} />
+    <>
+      <div className="flex flex-col gap-2 items-center justify-center">
+        <div className="avatar w-[250px] h-[250px] object-contain mb-1 border-1 border-slate-600 rounded-full mt-10 ">
+          <img src={user?.avatar?.url} alt={"userimage"} />
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <span className="text-black font-medium text-xl">{user?.name}</span>
+          <span className="text-[#8b8b8c] text-[18px]">@{user?.username}</span>
+        </div>
+
+        <div className="w-1/2 bg-[#fedaef] rounded-xl  font-semibold flex text-left p-2 pl-3 text-[#610726] hover:cursor-pointer transition-all duration-500 hover:bg-[#fedaefc7]">
+          {user?.bio} 
+        </div>
+        <div className="bg-[#e6f1fe] w-1/2 rounded-xl text-[#004493] font-semibold p-2 pl-3 hover:bg-[#0045932c] cursor-pointer transition-all duration-500">{moment(user?.createdAt).fromNow()}</div>
+
       </div>
-      <ProfileCard text={user?.bio} heading={"Bio"} />
-      <ProfileCard
-        text={`@${user?.username}`}
-        heading={"Username"}
-        Icon={<FaUserAlt />}
-      />
-      <ProfileCard text={user?.name} heading={"Name"} Icon={<BiSolidFace />} />
-      <ProfileCard
-        text={moment(user?.createdAt).fromNow()}
-        heading={"Join Date"}
-        Icon={<CgCalendarDates />}
-      />
-    </div>
+    </>
   );
 };
 
-const ProfileCard = ({ text, Icon, heading }) => (
-  <div className="flex items-center gap-2 text-center">
-    {Icon && Icon}
-    <div className="flex flex-col jus">
-      <span>{text}</span>
-      <span className=" text-slate-800 font-semibold">{heading}</span>
-    </div>
-  </div>
-);
 
 export default Profile;
