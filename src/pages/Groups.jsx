@@ -129,20 +129,20 @@ const Groups = () => {
             type="text"
             value={groupNameUpdatedValue}
             onChange={(e) => setGroupNameUpdatedValue(e.target.value)}
-            className="bg-transparent outline-none border-b-[1px] text-white font-bold text-xl border-white pt-2  placeholder-white focus:border-blue-500 cursor-pointer"
+            className="bg-transparent outline-none border-b-[1px] text-black font-bold text-xl border-black pt-2  placeholder-black focus:border-blue-500 cursor-pointer"
           />
           <button
             onClick={updateGroupName}
             disabled={isLoadingGroupName}
-            className="text-xl"
+            className="text-xl filter invert"
           >
             <MdOutlineDownloadDone />
           </button>
         </>
       ) : (
         <>
-          <span className="font-bold text-2xl">{groupName}</span>
-          <button disabled={isLoadingGroupName} onClick={() => setIsEdit(true)}>
+          <span className="font-bold text-2xl text-black">{groupName}</span>
+          <button className="filter invert" disabled={isLoadingGroupName} onClick={() => setIsEdit(true)}>
             <RiEdit2Fill />
           </button>
         </>
@@ -176,7 +176,7 @@ const Groups = () => {
   ) : (
     <div className="flex w-full h-screen">
       {/* first div */}
-      <div className="w-[30%]  hidden sm:block  backdrop-blur-2xl border-none overflow-y-auto scrollable">
+      <div className="w-[30%]  hidden sm:block  backdrop-blur-2xl  overflow-y-auto scrollable border border-solid border-r-1">
         <GroupList myGroups={myGroups?.data?.groups} chatId={chatId} />
       </div>
       {/* second fiv */}
@@ -250,20 +250,20 @@ const Groups = () => {
               {/* Page content here */}
               <label
                 htmlFor="my-drawer"
-                className="drawer-button block sm:hidden top-2 text-2xl right-2 fixed hover:cursor-pointer"
+                className="drawer-button block sm:hidden top-2 text-2xl right-2 fixed hover:cursor-pointer filter invert"
               >
                 <IoMenu />
               </label>
             </div>
-            <div className="drawer-side  ">
+            <div className="drawer-side   ">
               <label
                 htmlFor="my-drawer"
                 aria-label="close sidebar"
                 className="drawer-overlay "
               ></label>
               <div
-                style={{ backgroundColor: backgroundColor }}
-                className="menu block sm:hidden  w-[50%]  h-full  backdrop-blur-2xl border-none"
+                // style={{ backgroundColor: backgroundColor }}
+                className="menu  block sm:hidden  w-[50%]  h-full  border-none bg-white"
               >
                 {/* Sidebar content here */}
                 <GroupList myGroups={myGroups?.data?.groups} chatId={chatId} />
@@ -278,7 +278,7 @@ const Groups = () => {
 
 // group list
 const GroupList = ({ w = "100%", myGroups = [], chatId }) => (
-  <div className={`flex flex-col w-[${w}]`}>
+  <div className={`flex flex-col w-[${w}]  `}>
     {myGroups.length > 0 ? (
       myGroups.map((group) => (
         <GroupListItem key={group._id} group={group} chatId={chatId} />
@@ -299,7 +299,7 @@ const GroupListItem = memo(({ group, chatId }) => {
       onClick={(e) => {
         if (chatId === _id) e.preventDefault();
       }}
-      className="no-underline text-black  hover:bg-slate-500"
+      className="no-underline text-black  hover:bg-[#EEEEEF] rounded-md m-1"
     >
       <div
         style={{
@@ -315,8 +315,8 @@ const GroupListItem = memo(({ group, chatId }) => {
         {/* avatar card */}
         <AvatarCard avatar={avatar} />
 
-        <div className="flex flex-col">
-          <span>{name}</span>
+        <div className="flex flex-col ">
+          <span className="text-black font-semibold">{name}</span>
         </div>
       </div>
     </Link>
