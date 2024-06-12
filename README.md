@@ -1,4 +1,4 @@
-#ChatEase
+# ChatEase
 
 ChatEase is a versatile chat application designed to streamline communication for users. With features like multiple friend addition, login/signup capabilities, avatar customization, and group creation accommodating up to 100 members, it caters to various communication needs. The application utilizes routing and real-time chat functionality powered by Socket.IO, ensuring seamless and instant communication. Users can effortlessly share files, including images, videos, audio, and PDFs, all stored on Cloudinary for convenient access. ChatEase boasts responsiveness across all devices, providing an optimal user experience regardless of the platform. Additionally, users can stay informed with real-time indicators of online users and typing status, facilitating smooth and efficient communication.
 
@@ -21,7 +21,8 @@ ChatEase is a versatile chat application designed to streamline communication fo
 
 ## Screenshots
 
-![App Screenshot](https://res.cloudinary.com/dsqrtf5di/image/upload/v1718204213/ChatEase_diwxf0.bmp)
+![sodapdf-converted](https://github.com/himanshubundell10/chatapp-frontend/assets/163033211/83000b5e-ef95-4f70-98f5-76d7016ed191)
+
 
 ## Run Locally
 
