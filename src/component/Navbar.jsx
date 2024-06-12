@@ -82,7 +82,7 @@ const Navbar = () => {
     <>
       <nav
         // style={{ backgroundColor: backgroundColor }}
-        className={`w-full flex items-center justify-between  h-12 backdrop-blur-2xl faded-border-box bg-[#F4F4F5] `}
+        className={`w-full flex items-center justify-between  h-12 backdrop-blur-2xl faded-border-box bg-white shadow-2xl border-b-[1px] border-slate-300 `}
       >
         {/* for menu and app name */}
         <div className="logo flex gap-4 justify-center items-center">
@@ -93,7 +93,7 @@ const Navbar = () => {
           >
             <BiMenuAltLeft />
           </button>
-          <span className="font-pacifico text-2xl font-extrabold sm:pl-6 text-black ">
+          <span className="font-pacifico text-2xl font-extrabold sm:pl-6  filter invert ">
             ChatEase
           </span>
         </div>
@@ -105,7 +105,7 @@ const Navbar = () => {
             onClick={openSearch}
             className="text-xl font-extrabold filter invert "
           >
-           <FaSearch/>
+            <FaSearch />
           </button>
           <button
             title="Create Group"
@@ -142,7 +142,10 @@ const Navbar = () => {
               <IoIosNotifications />
             </button>
           )}
-          <button onClick={openTheme} className="text-xl font-extrabold filter invert">
+          <button
+            onClick={openTheme}
+            className="text-xl font-extrabold filter invert"
+          >
             <IoMdColorPalette />
           </button>
           <button

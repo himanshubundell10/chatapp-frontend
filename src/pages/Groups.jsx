@@ -162,7 +162,7 @@ const Groups = () => {
         </button>
         <button
           onClick={openAddMemberHandler}
-          className="border-none pl-2 pr-2 pt-1 pb-1 rounded-md hover:opacity-0.7 flex items-center  bg-blue-700 hover:bg-blue-600"
+          className="border-none pl-2 pr-2 pt-1 pb-1 rounded-md hover:opacity-0.7 flex items-center  bg-[#007AFF] hover:bg-[#3596FF]"
         >
           <MdAdd />
           Add Member
@@ -176,7 +176,7 @@ const Groups = () => {
   ) : (
     <div className="flex w-full h-screen">
       {/* first div */}
-      <div className="w-[30%]  hidden sm:block  backdrop-blur-2xl  overflow-y-auto scrollable border border-solid border-r-1">
+      <div className="w-[30%]  hidden sm:block  backdrop-blur-2xl  overflow-y-auto scrollable border border-solid border-r-1 bg-[#007AFF]">
         <GroupList myGroups={myGroups?.data?.groups} chatId={chatId} />
       </div>
       {/* second fiv */}
@@ -193,11 +193,11 @@ const Groups = () => {
           <>
             {GroupName}
 
-            <span className="m-4 self-start text-2xl font-semibold tracking-wide">
+            <span className="m-4 self-start text-2xl font-semibold tracking-wide text-black">
               Members
             </span>
 
-            <div className="max-w-[45rem] self-start box-border w-full p-4 sm:p-4 md:p-[1rem 4rem] max-h-[50vh] overflow-y-auto scrollable space-y-4 shadow-lg">
+            <div className="max-w-[45rem] mx-auto self-start box-border w-full p-4 sm:p-4 md:p-[1rem 4rem] max-h-[50vh] overflow-y-auto scrollable space-y-4 shadow-lg">
               {/* members */}
 
               {isLoadingRemoveMember ? (
@@ -244,13 +244,13 @@ const Groups = () => {
 
         {/* drawer start from here */}
         {window.innerWidth < 640 && (
-          <div className="drawer">
-            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content">
+          <div className="drawer ">
+            <input id="my-drawer" type="checkbox" className="drawer-toggle " />
+            <div className="drawer-content ">
               {/* Page content here */}
               <label
                 htmlFor="my-drawer"
-                className="drawer-button block sm:hidden top-2 text-2xl right-2 fixed hover:cursor-pointer filter invert"
+                className="drawer-button block sm:hidden top-2 text-2xl right-2 fixed hover:cursor-pointer filter invert "
               >
                 <IoMenu />
               </label>
@@ -263,7 +263,7 @@ const Groups = () => {
               ></label>
               <div
                 // style={{ backgroundColor: backgroundColor }}
-                className="menu  block sm:hidden  w-[50%]  h-full  border-none bg-white"
+                className="menu  block sm:hidden  w-[50%]  h-full  border-none bg-[#007AFF] "
               >
                 {/* Sidebar content here */}
                 <GroupList myGroups={myGroups?.data?.groups} chatId={chatId} />
@@ -293,20 +293,21 @@ const GroupList = ({ w = "100%", myGroups = [], chatId }) => (
 
 const GroupListItem = memo(({ group, chatId }) => {
   const { name, avatar, _id } = group;
+  const sameSender = chatId===_id
   return (
     <Link
       to={`?group=${_id}`}
       onClick={(e) => {
         if (chatId === _id) e.preventDefault();
       }}
-      className="no-underline text-black  hover:bg-[#EEEEEF] rounded-md m-1"
+      className="no-underline text-white  hover:bg-[#3596FF] rounded-md m-1"
     >
       <div
         style={{
           display: "flex",
           gap: "1rem",
           alignItems: "center",
-          // backgroundColor: sameSender ? "black" : "unset",
+          backgroundColor: sameSender ? "#3596FF" : "unset",
           // color: sameSender ? "white" : "unset",
           position: "relative",
           padding: "1rem 0rem 1rem 1rem",
@@ -316,7 +317,7 @@ const GroupListItem = memo(({ group, chatId }) => {
         <AvatarCard avatar={avatar} />
 
         <div className="flex flex-col ">
-          <span className="text-black font-semibold">{name}</span>
+          <span className="text-white font-light">{name}</span>
         </div>
       </div>
     </Link>

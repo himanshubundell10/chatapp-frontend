@@ -104,7 +104,7 @@ const NewGroup = () => {
           <button
             disabled={isLoadingNewGroup}
             onClick={submitHandler}
-            className="flex h-12 items-center justify-center bg-blue-700 pl-2 pr-2 min-h-12 rounded-md hover:bg-blue-600"
+            className="flex h-12 items-center justify-center bg-[#007AFF] pl-2 pr-2 min-h-12 rounded-md hover:bg-[#3596FF]"
           >
             Create
           </button>

@@ -25,6 +25,7 @@ import Navbar from "../Navbar";
 import DeleteChatMenu from "../dialogs/DeleteChatMenu";
 import ChatList from "../specific/ChatList";
 import Profile from "../specific/Profile";
+import MiniLoader from "../MiniLoader";
 
 const AppLayout = () => (WrappedComponent) => {
   return (props) => {
@@ -43,11 +44,11 @@ const AppLayout = () => (WrappedComponent) => {
       height: "calc(100vh - 3rem)",
     };
 
-    // useEffect(() => {
-    //   window.onresize = () => {
-    //     window.location.reload();
-    //   };
-    // }, [isMediumScreen, isSmallScreen]);
+    useEffect(() => {
+      window.onresize = () => {
+        window.location.reload();
+      };
+    }, [isMediumScreen, isSmallScreen]);
 
     const backgroundColor = hexToRgba70("#0000FF");
 
@@ -129,13 +130,8 @@ const AppLayout = () => (WrappedComponent) => {
 
         {/* chat drawer */}
         {isLoading ? (
-          <div className="w-full flex flex-col  gap-4 justify-start mt-10 items-start">
-            <div className="skeleton h-4 w-28 m-0 p-0"></div>
-            <div className="skeleton h-4 w-1/2 m-0 p-0"></div>
-            {Array.from({ length: 3 }).map((_, index) => (
-              <div key={index} className="skeleton h-4 w-full"></div>
-            ))}
-          </div>
+          // <MiniLoader />
+          ""
         ) : (
           <Drawer
             open={isMobile}
@@ -144,7 +140,7 @@ const AppLayout = () => (WrappedComponent) => {
           >
             <div
               // style={{ backgroundColor: backgroundColor }}
-              className="w-full h-screen bg-white scrollable border-r-2"
+              className="w-full h-screen  scrollable border-r-2 bg-[#007AFF] "
             >
               <ChatList
                 w="70vw"
@@ -161,17 +157,9 @@ const AppLayout = () => (WrappedComponent) => {
         <div style={gridStyle}>
           {/* Chatlist component */}
 
-          <div
-            className="hidden sm:block scrollable h-full border border-solid border-r-1 border-l-0 "
-          >
+          <div className="hidden sm:block scrollable h-full border border-solid border-r-1 border-slate-300 border-t-0 border-l-0 bg-[#007AFF]">
             {isLoading ? (
-              <div className="w-full flex flex-col  gap-4 justify-start mt-10 items-start">
-                <div className="skeleton h-4 w-28 m-0 p-0"></div>
-                <div className="skeleton h-4 w-1/2 m-0 p-0"></div>
-                {Array.from({ length: 3 }).map((_, index) => (
-                  <div key={index} className="skeleton h-4 w-full"></div>
-                ))}
-              </div>
+              <MiniLoader />
             ) : (
               <ChatList
                 chats={data?.chats}
@@ -183,11 +171,13 @@ const AppLayout = () => (WrappedComponent) => {
             )}
           </div>
           {/* Main component */}
-          <div className={`backdrop-blur-2xl border border-solid border-r-1 border-l-0 `}>
+          <div
+            className={`backdrop-blur-2xl border border-solid border-r-1 border-l-0 border-t-0 border-slate-300 `}
+          >
             <WrappedComponent {...props} chatId={chatId} user={user} />
           </div>
           {/* Profile component */}
-          <div className="md:block hidden backdrop-blur-2xl border-none">
+          <div className="md:block hidden backdrop-blur-2xl border-none bg-white">
             <Profile user={user} />
           </div>
         </div>

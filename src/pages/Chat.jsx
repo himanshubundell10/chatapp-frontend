@@ -175,7 +175,7 @@ const Chat = ({ chatId, user }) => {
     <>
       {/* chat container */}
       <div
-        className="flex flex-col p-1 gap-1 h-[86%] overflow-x-hidden overflow-y-auto  scrollable"
+        className="flex flex-col p-1 gap-1 h-[86%] overflow-x-hidden overflow-y-auto  scrollable bg-[#F4F4F5]"
         style={{ maxHeight: "calc(100% - 3rem)" }}
       >
         <div ref={containerRef} className="scrollable">
@@ -194,12 +194,22 @@ const Chat = ({ chatId, user }) => {
 
       <form
         onSubmit={submitHandler}
-        className={`absolute w-full p-1 h-[14%] flex flex-col justify-center`}
+        className={`w-full p-1 h-[14%] flex flex-col justify-center bg-[#F4F4F5]`}
         style={{ position: "relative" }}
       >
-        <div className="flex justify-center items-center gap-1 border border-[2px] rounded-xl p-2">
-          <button onClick={handleFileOpen} className={`text-xl filter invert`}>
-            <RiAttachment2 />
+        <div className="flex justify-center items-center gap-1 border-solid border-slate-300 border-[1px]  rounded-xl p-2">
+          <button onClick={handleFileOpen} className={`text-xl text-[#007AFF]`}>
+            <svg
+              stroke="currentColor"
+              fill="#007AFF"
+              strokeWidth="0"
+              viewBox="0 0 24 24"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M14.8287 7.7574L9.1718 13.4143C8.78127 13.8048 8.78127 14.4379 9.1718 14.8285C9.56232 15.219 10.1955 15.219 10.586 14.8285L16.2429 9.17161C17.4144 8.00004 17.4144 6.10055 16.2429 4.92897C15.0713 3.7574 13.1718 3.7574 12.0002 4.92897L6.34337 10.5858C4.39075 12.5384 4.39075 15.7043 6.34337 17.6569C8.29599 19.6095 11.4618 19.6095 13.4144 17.6569L19.0713 12L20.4855 13.4143L14.8287 19.0711C12.095 21.8048 7.66283 21.8048 4.92916 19.0711C2.19549 16.3374 2.19549 11.9053 4.92916 9.17161L10.586 3.51476C12.5386 1.56214 15.7045 1.56214 17.6571 3.51476C19.6097 5.46738 19.6097 8.63321 17.6571 10.5858L12.0002 16.2427C10.8287 17.4143 8.92916 17.4143 7.75759 16.2427C6.58601 15.0711 6.58601 13.1716 7.75759 12L13.4144 6.34319L14.8287 7.7574Z"></path>
+            </svg>
           </button>
 
           <input
@@ -212,9 +222,9 @@ const Chat = ({ chatId, user }) => {
           />
           <button
             type="submit"
-            className="text-2xl bg-black p-1  w-8 h-8 flex items-center justify-center hover:rotate-12 transition-all rounded-full"
+            className="text-2xl bg-[#007AFF]  p-1  w-8 h-8 flex items-center justify-center hover:rotate-12 hover:scale-110 duration-300 hover:bg-[#007bffcb] transition-all rounded-full"
           >
-            <BsFillSendFill className="w-5" />
+            <BsFillSendFill className="w-5 " />
           </button>
         </div>
       </form>

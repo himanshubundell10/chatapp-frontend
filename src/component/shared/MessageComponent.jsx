@@ -27,7 +27,17 @@ const MessageComponent = ({ message, user }) => {
         {sender?.name}
         <time className="text-xs opacity-60 text-black">{timeAgo}</time>
       </div>
-      {content && <span className="chat-bubble">{content}</span>}
+      {content && (
+        <span
+          style={{
+            background: "#007AFF",
+            color: sameSender ? "white" : "black",
+          }}
+          className="chat-bubble font-normal "
+        >
+          {content}
+        </span>
+      )}
 
       {/* if attathment file */}
       {attachments.length > 0 &&
@@ -35,7 +45,11 @@ const MessageComponent = ({ message, user }) => {
           const url = attachment.url;
           const file = fileFormat(url);
           return (
-            <span key={index} className="chat-bubble">
+            <span
+              style={{ background: "#007AFF" }}
+              key={index}
+              className="chat-bubble"
+            >
               <a href={url} target="_blank" download>
                 {<RenderAttachment file={file} url={url} />}
               </a>

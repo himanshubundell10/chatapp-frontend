@@ -13,6 +13,7 @@ const Search = () => {
   const search = useInputValidation("");
   const { isSearch } = useSelector((state) => state.misc);
   const [searchUser] = useLazySearchUserQuery();
+
   const [sendFriendRequest, isLoadingSendFriendRequest, data] =
     useAsyncMutation(useSendFriendRequestMutation);
 
